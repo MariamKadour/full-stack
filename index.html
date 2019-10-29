@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>sweet</title>
+
+
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+	<link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+
+	<div class="container mx-auto mt-5 style="width: 200px;">
+		
+		
+		<div class="card" style="width: 15rem;">
+			<div class="card-header">
+				<div class="row">
+
+					<div class="form_groub">
+						<label>First Number:</label>
+						<input type="Number" id="F_num">
+					</div>
+				</div>
+				<div class="row">
+					<div class="form_groub ">
+						<label>Secand Number:</label>
+						<input type="Number" id="s_num" >
+
+					</div>
+				</div>
+			</div>
+
+
+			<ul class="list-group list-group-flush">
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col_4">
+							<button class="btn btn-primary" id="plus ">+</button>
+							<button class="btn btn-primary" id="minus">-</button>
+							<button class="btn btn-primary" id="mul">*</button>
+							<button class="btn btn-primary" id="div">/</button>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col_4">
+							<button class="btn btn-primary" id="one">1</button>
+							<button class="btn btn-primary" id="tow">2</button>
+							<button class="btn btn-primary" id="three">3</button>
+							<button class="btn btn-primary" id="four">4</button>
+						</div>
+					</div>
+				</li>
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col_4 ">
+
+							<button class="btn btn-primary" id="five">5</button>
+							<button class="btn btn-primary" id="six">6</button>
+							<button class="btn btn-primary" id="seven">7</button>
+							<button class="btn btn-primary" id="eught">8</button>
+							
+						</div>
+					</div>
+
+				</li>
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col_4 ">
+							<button class="btn btn-primary" id="nighn">9</button>
+							<button class="btn btn-primary" id="zero">0</button>
+							<button class="btn btn-primary" id="mode">%</button>
+							<button class="btn btn-primary" id="clear">c</button>
+							
+						</div>
+					</div>
+
+				</li>
+				<li class="list-group-item">
+					<div class="row">
+						<div class="col_4 ">
+							<div class="form_groub">
+								<label>result</label>
+								<input type="Number" id="res">
+
+							</div>
+							
+						</div>
+					</div>
+
+				</li>
+			</ul>
+			<ul class="list-group-flush">
+				
+			</ul>
+		</div>
+
+
+
+	
+</div>
+<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+	$('#plus').click(plus);
+	$('#minus').click(minus);
+	$('#mul').click(mul);
+	$('#div').click(div);
+	$('#clear').click(clear);
+	$('#one').click(one);
+	function one()
+	{
+		var one= $('#one').val();
+		
+		$('#F_num').text(res);
+
+		$('#s_num').text(res);
+
+	}
+
+	function plus()
+	{
+		var F_num = $('#F_num').val();
+		var s_num = $('#s_num').val();
+		var res = Number(F_num)+Number(s_num);
+		$('#res').text(res);
+	}
+	function minus()
+	{
+		var F_num = $('#F_num').val();
+		var s_num = $('#s_num').val();
+		var res = F_num- s_num;
+		$('res').text(res);
+	}
+	function mul()
+	{
+		var F_num = $('#F_num').val();
+		var s_num = $('#s_num').val();
+		var res = F_num * s_num;
+		$('res').text(res);
+	}
+
+	function div()
+	{
+		var F_num = $('#F_num').val();
+		var s_num = $('#s_num').val();
+		var res = F_num * s_num;
+		$('res').text(res);
+	}
+	function equal()
+	{
+		var sum = document.F_num.val();
+		if(sum){
+			document.F_num.val()=eval(sum);
+		}
+
+	}
+	function clear()
+	{
+		document.F_num.val()='';
+
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<link rel="icon" type="image/png" href="assets/img/favicon.png">
+
+	<link rel="stylesheet" type="text/css" href="assets/plugins/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+	<style type="text/css">
+		.row1:befor,.row1:after{
+			content: '';
+			display: table;
+			clear: both;
+			width: 25%;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div class="container mt-5">
+		<div class="row">
+			<div class="col-3"></div>
+			<div class="col-6 border">
+				<div class="row my-4">
+					<div class="col">
+						<input type="text" id="result" class="form-control" readonly>
+					</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">7</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">8</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">9</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">/</button>
+					</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">4</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">5</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">6</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">*</button>
+					</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">1</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">2</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">3</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">-</button>
+					</div>
+				</div>
+				<div class="row my-2">
+					<div class="col-3">
+						<button class="btn btn-info btn-block push-to">0</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-danger btn-block del">Del</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-success btn-block equal">=</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">+</button>
+					</div>
+				</div>
+				
+
+				<div class="row my-2">
+					<div class="col-3">
+						<button class="btn btn-primary btn-block clean ">c</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">.</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block push-to">%</button>
+					</div>
+					<div class="col-3">
+						<button class="btn btn-primary btn-block power">^</button>
+					</div>
+				</div>
+			</div>s
+			
+			
+		</div>
+	</div>
+
+
+	<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+
+
+
+
+		
+		// function key1(key1.key)
+		// {
+
+		// 	var key =key1.key;
+		// 	var $result = $('#result');
+		// 	var old_res = $result.val();
+		// 	$result.val(old_res+key);
+		// } ;
+
+
+		$('body').keydown(function(event){
+
+		// alert(keydown);
+		console.log(event);
+		var x = console.log(event.key);
+		console.log(event.keyCode);
+		
+		
+	});
+		
+		push-to('x');
+
+
+
+		//-----------------------------------------------//
+		$('.push-to').click(
+			function push_to(x)
+			{
+				var push_text = $(this).text();
+				var x=x;
+				var $result = $('#result');
+				var old_res = $result.val();
+				$result.val(old_res+push_text+x);
+			});
+		//-----------------------------------------------//
+		$('.equal').click(equal);
+		function equal(){
+			var $result = $('#result');
+  			var res = $result.val();
+			$result.val(eval(res));
+		}
+		//-----------------------------------------------//
+		$('.del').click(del);
+		function del(){
+			var $result = $('#result');
+			var old_res = $result.val();
+			var res = old_res.slice(0, -1);
+			$result.val(res);
+		}
+		//-----------------------------------------------//
+		$('.clean').click(clean);
+		function clean(){
+			var $result = $('#result');
+			var res =result.val('');
+			
+			$result.val(res);
+		}
+		// -----------------------------//
+		$('.power').click(power);
+		function power(){
+			;
+			var $result = $('#result');
+			var old_res1 = $result.val();
+			var res= old_res1*old_res
+			$result.val(eval(res));
+		}
+	</script>
+
+</body>
+</html>
